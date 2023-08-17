@@ -1,0 +1,380 @@
+:root{
+    --primary-black:#000; 
+    --primary-white:#F4F4F4; 
+    --banner-background-mobile: url(./assets/banner_background_mobile.png) no-repeat center;
+    --banner-background: url(./assets/banner_background.png) no-repeat;
+    --produtos-background-mobile: url(./assets/background_produtos_mobile.png) no-repeat;
+    --produtos-background: url(./assets/background_produtos.png) no-repeat;
+    
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: var(--primary-white);
+}
+
+.container{
+    max-width: 90vw;
+    width: 100%;
+    margin: 0 auto;
+}
+
+body{
+    background-color: var(--primary-black);
+    font-family: 'open sans', sans-serif;
+    overflow-x: hidden;
+}
+
+/* HEADER MOBILE*/
+
+header.container{
+    position: sticky;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    top: 0;
+    padding: 10px 0 20px;
+
+    background-color: var(--primary-black);
+    z-index: 1;
+}
+
+header h1{
+    flex-grow: 1;
+    font-family: 'Inspiration', cursive;
+    font-size: 48px;
+}
+
+.hamburguer{
+    position: relative;
+    display:block;
+    width:30px;
+    height:2px;
+    background-color: var(--primary-white);
+}
+
+.hamburguer:before,
+.hamburguer:after{
+    background:var(--primary-white);
+    content:'';
+    display:block;
+    width:100%;
+    height:100%;
+    position:absolute;
+}
+
+.hamburguer:before {
+    top: -10px;
+}
+
+.hamburguer:after {
+    bottom: -10px;
+}
+
+nav{
+    display: none;
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    padding: 20px;
+    background-color: var(--primary-white);
+}
+
+nav ul{
+    display: flex;
+    justify-content: space-between;
+}
+
+nav ul li{
+    list-style-type: none;
+    text-align: center;
+}
+
+nav ul li a{
+    text-decoration: none;
+    color: var(--primary-black);
+}
+
+/* MAIN - MOBILE */
+
+.banner{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    height: 100vh;
+    background: var(--banner-background-mobile);
+}
+
+.banner h1{
+    font-size: 60px;
+    text-align: center;
+    text-transform: uppercase;
+    line-height: 60px;
+}
+
+.banner div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 275px;
+    gap: 20px;
+}
+
+.banner div p {
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+.banner div a{
+    text-decoration: none;
+    letter-spacing: 4px;
+    padding: 0 0 10px;
+    border-bottom: 2px solid;
+}
+/* PRODUTOS */
+
+.produtos{
+    margin-bottom: 2px;
+    overflow-x: hidden;
+}
+
+.produtos > div {
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--produtos-background-mobile);
+    background-position: center;
+    margin: 10px 0;
+}
+
+.produtos > div h2{
+    font-size: 40px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+}
+
+.produtos ul{
+    display: block;
+    list-style-type: none;
+}
+
+.produtos li{
+    margin: 5px 0 0;
+    background-color: var(--primary-white);
+    
+}
+
+.produtos li img{
+    width: 100%;
+}
+
+.info-produtos{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--primary-white);
+}
+
+.info-produtos span{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 30px;
+    width: 30px;
+    top: -50%;
+    right: 50%;
+    -ms-transform: translate(50%, -0%);
+    transform: translate(50%, -0%);
+    background-color: var(--primary-white);
+    color: var(--primary-black);
+    cursor: pointer;
+}
+
+.info-produtos p,
+.info-produtos strong{
+    color: var(--primary-black);
+}
+
+/* SOBRE */
+
+.sobre{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    padding: 70px 0 70px;
+    background-color: var(--primary-white);
+}
+
+.sobre h2,
+.sobre p{
+    color: var(--primary-black);
+}
+
+.sobre h2{
+    font-size: 40px;
+    text-align: center;
+}
+
+.sobre span{
+    flex-grow: 1;
+    width: 60%;
+    text-align: center;
+    font-size: 22px;
+}
+
+/*footer mobile*/
+
+footer{
+    padding: 20px;
+    background-color: lightgrey;
+}
+
+footer p{
+    text-align: center;
+    color: var(--primary-black);
+}
+
+@media screen and (min-width:768px) {
+
+    /* header table*/
+    header.container{
+        position: initial;
+        padding-bottom: 0;
+    }
+    .hamburguer{
+        display: none;
+    }
+
+    nav{
+        display: block;
+        position: inherit;
+        width: 50%;
+        background: transparent;
+        padding: 0;
+    }
+
+    nav ul li{
+        flex-grow: 1;
+        padding: 20px 0;
+    }
+
+    nav ul li:hover{
+        border-bottom: 2px solid var(--primary-white);
+    }
+
+    nav ul li a{
+        font-size: 18px;
+        color: var(--primary-white);
+    }
+
+    .banner{
+        background: var(--banner-background);
+    }
+
+    /*banner tabler*/
+    .banner > div{
+        width: 400px;
+    }
+
+
+    /*Produtos tablet*/
+
+    .produtos > div {
+        background: var(--produtos-background);
+        background-position: center;
+        background-size: cover;
+        transition: transform 1s;
+        cursor: pointer;
+    }
+
+    .produtos > div:hover{
+        transform: scale(1.1);
+    }
+
+    .produtos ul{
+        display: grid;
+        grid-template-columns: repeat(2, 50%);
+        column-gap: 2px;
+    }
+
+}
+
+@media screen and (min-width:1023px) and (orientation: landscape) {
+    
+    /*Produtos tablet landscape*/
+
+    .produtos ul{
+        display: grid;
+        grid-template-columns: repeat(4, 25%);
+        column-gap: 2px;
+    }
+}
+
+@media screen and (min-width:1034px) {
+
+    /*header desktop*/
+
+    .banner{
+        gap: 30px;
+    }
+
+    .banner h1{
+        font-size: 80px;
+    }
+
+    .banner div{
+        gap: 30px;
+        width: fit-content;
+    }
+
+
+    /*produtos desktop*/
+
+    
+
+    .produtos ul{
+        display: grid;
+        grid-template-columns: repeat(4, 25%);
+        column-gap: 2px;
+    }
+
+    .produtos li img{
+        cursor: pointer;
+    }
+
+    /*sobre desktop*/
+
+    .sobre{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding: 70px;
+        max-width: 66.66;
+        gap: 0;
+    }
+
+    .sobre h2{
+        font-size: 60px;
+        flex-grow: 1;
+    }
+
+    .sobre span{
+        max-width: 50%;
+        padding: 0 90px;
+    }
+    .sobre span p{
+        text-align: left;
+    }
+}
